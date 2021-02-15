@@ -71,6 +71,10 @@ def solve_command(text, data, api_url, usid):
         output(data, _api_mes.random_acg_pic(), api_url)
         return
 
+    if text == '#猫猫':
+        output(data, _api_mes.random_cat_pic(), api_url)
+        return
+
     # if text == '#精神小伙':
     #     output(data, _api_mes.spirit_guy(), api_url)
     #     return
@@ -122,6 +126,13 @@ def solve_command(text, data, api_url, usid):
         return
     l1 += 1
     command = text[1:l1]
+
+    if command == '二维码':
+        if l == l1:
+            output(data, 'COMMAND ERROR', api_url)
+            return
+        output(data, _api_mes.QRcode(text[l1 + 1:l]), api_url)
+        return
 
     if command == 'add':
         if (au == 'banned'):

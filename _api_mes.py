@@ -19,6 +19,12 @@ def random_acg_pic():
     s = r.json()
     return '[CQ:image,file={}]'.format(s['imgurl'])
 
+def random_cat_pic():
+    headers = {"x-api-key" : "4bfb9a2f-1c06-4483-bde7-53885acfb97b"}
+    r = requests.get('https://api.thecatapi.com/v1/images/search', headers = headers)
+    s = r.json()
+    return '[CQ:image,file={}]'.format(s[0]['url'])
+
 def spirit_guy():
     r = requests.post('https://cdn.ipayy.net/says/api.php?encode=json')
     s = r.json()
@@ -28,3 +34,8 @@ def random_hitokoto():
     r = requests.get('https://v1.hitokoto.cn/?c=a&c=b&c=c&c=f')
     s = r.json()
     return s['hitokoto'] + '#$@$#from:' + s['from']
+
+def QRcode(_url):
+    _QRcode_api_url = 'https://api.pwmqr.com/qrcode/create/?return=json&url='
+    _QRcode_api_url += _url
+    return '[CQ:image,file={}]'.format(_QRcode_api_url)
