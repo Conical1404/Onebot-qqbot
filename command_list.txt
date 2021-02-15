@@ -1,0 +1,36 @@
+﻿#help
+#system call:inspect entire command list
+获取命令列表
+#system call:inspect corpus size
+获取语料条数
+#system call:inspect todo list
+获取正在开发的功能列表
+#system call:refresh corpus
+刷新语料库
+$%$#roll#A#B#C...
+在 A, B, C... 中随机一条发送
+#add#A#B
+将 (A, B) 加入语料库，当消息中出现 A 时 bot 将回复 B
+同一条 A 可对应多条 B，此时分条全部发送
+#delete#A#B
+删除语料 (A, B)，需 bot_admin 权限
+#delete all#A
+删除与 A 相关的所有语料，需 bot_admin 权限
+#一言
+获取一条一言 (supported by hitokoto)
+#二次元
+获取随机二次元图片（由于网络问题会有延迟）
+#历史上的今天
+获取历史上的今天发生的事情
+$%$#更新日志
+获取 update log
+#system call:clear corpus
+清除语料库（需 root 权限）
+#system call:sleep
+使 bot 进入休眠状态，休眠状态下不回复任何消息（需 bot_admin 权限）
+#system call:wake up
+唤醒 bot（需 bot_admin 权限）
+#give admin to#id
+授予 qq 号为 id 的用户 bot_admin 权限（需 root 权限）
+#cancle admin#id
+取消 qq 号为 id 的用户的 bot_admin 权限（需 root 权限）
