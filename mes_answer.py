@@ -151,6 +151,12 @@ def solve_command(text, data, api_url, usid):
             return
         text1 = text[l1 + 1:l2]
         text2 = text[l2 + 1:l]
+        if text1 == '':
+            output(data, 'COMMAND ERROR', api_url)
+            return
+        if text2 == '':
+            output(data, 'COMMAND ERROR', api_url)
+            return
         output(data, _corpus.set_value(text1, text2), api_url)
         return
 
